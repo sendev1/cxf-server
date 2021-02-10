@@ -20,10 +20,11 @@ repositories {
 
 dependencies {
 	//implementation("org.springframework.experimental:spring-graalvm-native:0.9.0-SNAPSHOT")
-	implementation "org.springframework.experimental:spring-graalvm-native:0.8.5"
+	implementation "org.springframework.experimental:spring-graalvm-native:0.9.0-SNAPSHOT"
 	implementation "org.springframework.boot:spring-boot-starter-web"
 	implementation "org.apache.cxf:cxf-spring-boot-starter-jaxws:3.4.2"
 	implementation "org.springframework.boot:spring-boot-starter-validation"
+	implementation 'org.springframework:spring-context-indexer'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: "org.junit.vintage', module: 'junit-vintage-engine"

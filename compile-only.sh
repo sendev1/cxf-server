@@ -32,14 +32,9 @@ native-image \
   --install-exit-handlers \
   --enable-all-security-services \
   -Dspring.xml.ignore=false \
-  -Dorg.apache.cxf.jmx.disabled=true \
-  -Dcxf.metrics.enabled=false \
-  -Dmanagement.metrics.binders.jvm.enabled=false \
-  --initialize-at-build-time=org.apache.cxf.spring.boot.autoconfigure.micrometer.MicrometerMetricsAutoConfiguration \
   -H:Name=${ARTIFACT} \
-  --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
-  --trace-class-initialization=javax.el.CompositeELResolver,javax.el.BeanELResolver,javax.el.MapELResolver \
   -H:+ReportExceptionStackTraces \
+  --initialize-at-build-time=javax.el.MapELResolver,javax.el.ListELResolver \
   -cp ${CP} \
   ${MAINCLASS}
 

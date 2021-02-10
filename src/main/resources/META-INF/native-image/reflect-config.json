@@ -46,15 +46,15 @@
   "allDeclaredConstructors":true
 },
 {
-  "name":"com.cxf.server.ApplicationConfig$$EnhancerBySpringCGLIB$$3c95d0a3",
+  "name":"com.cxf.server.ApplicationConfig$$EnhancerBySpringCGLIB$$27d288ca",
   "allDeclaredFields":true,
   "allDeclaredMethods":true,
   "allDeclaredConstructors":true,
   "fields":[{"name":"CGLIB$FACTORY_DATA"}],
-  "methods":[{"name":"endpoint","parameterTypes":[] }]
+  "methods":[{"name":"endpoint","parameterTypes":["org.apache.cxf.Bus"] }]
 },
 {
-  "name":"com.cxf.server.ApplicationConfig$$EnhancerBySpringCGLIB$$3c95d0a3$$FastClassBySpringCGLIB$$2710e292",
+  "name":"com.cxf.server.ApplicationConfig$$EnhancerBySpringCGLIB$$27d288ca$$FastClassBySpringCGLIB$$f0bfc0d9",
   "methods":[{"name":"<init>","parameterTypes":["java.lang.Class"] }]
 },
 {
@@ -334,14 +334,6 @@
 },
 {
   "name":"com.tutorialspoint.helloworld.GreetingsResponse$JaxbAccessorF__return",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"com.tutorialspoint.helloworld.GreetingsResponse_WrapperTypeHelper1",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"com.tutorialspoint.helloworld.Greetings_WrapperTypeHelper1",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
@@ -796,14 +788,6 @@
   "allDeclaredMethods":true
 },
 {
-  "name":"org.apache.cxf.bindings.xformat.XMLBindingMessageFormat",
-  "methods":[{"name":"getOtherAttributes","parameterTypes":[] }]
-},
-{
-  "name":"org.apache.cxf.bindings.xformat.XMLFormatBinding",
-  "methods":[{"name":"getOtherAttributes","parameterTypes":[] }]
-},
-{
   "name":"org.apache.cxf.bus.extension.ExtensionManagerBus",
   "allDeclaredFields":true,
   "allDeclaredMethods":true,
@@ -913,15 +897,10 @@
   "methods":[{"name":"<init>","parameterTypes":["java.lang.String","java.lang.String"] }]
 },
 {
-  "name":"org.apache.cxf.common.util.ASMHelper$2",
-  "methods":[
-    {"name":"getValue","parameterTypes":[] }, 
-    {"name":"realType","parameterTypes":[] }
-  ]
+  "name":"org.apache.cxf.common.spi.ClassLoaderProxyService"
 },
 {
-  "name":"org.apache.cxf.common.util.ASMHelper$Opcodes",
-  "allDeclaredFields":true
+  "name":"org.apache.cxf.common.util.ASMHelperImpl"
 },
 {
   "name":"org.apache.cxf.configuration.Configurable",
@@ -933,6 +912,9 @@
 },
 {
   "name":"org.apache.cxf.endpoint.ServerRegistry"
+},
+{
+  "name":"org.apache.cxf.endpoint.dynamic.ExceptionClassCreatorProxyService"
 },
 {
   "name":"org.apache.cxf.frontend.ServerFactoryBean",
@@ -959,8 +941,14 @@
   "allPublicMethods":true
 },
 {
+  "name":"org.apache.cxf.jaxb.FactoryClassProxyService"
+},
+{
   "name":"org.apache.cxf.jaxb.JAXBDataBinding",
   "methods":[{"name":"<init>","parameterTypes":["boolean","java.util.Map"] }]
+},
+{
+  "name":"org.apache.cxf.jaxb.WrapperHelperProxyService"
 },
 {
   "name":"org.apache.cxf.jaxws.EndpointImpl",
@@ -975,6 +963,15 @@
   "name":"org.apache.cxf.jaxws.context.WebServiceContextResourceResolver",
   "fields":[{"name":"bus"}],
   "methods":[{"name":"<init>","parameterTypes":["org.apache.cxf.Bus"] }]
+},
+{
+  "name":"org.apache.cxf.jaxws.spi.WrapperClassCreatorProxyService"
+},
+{
+  "name":"org.apache.cxf.metrics.MetricsProvider"
+},
+{
+  "name":"org.apache.cxf.metrics.codahale.CodahaleMetricsProvider"
 },
 {
   "name":"org.apache.cxf.phase.PhaseManager"
@@ -994,7 +991,7 @@
   "allDeclaredConstructors":true
 },
 {
-  "name":"org.apache.cxf.spring.boot.autoconfigure.CxfAutoConfiguration$$EnhancerBySpringCGLIB$$ff7c806d",
+  "name":"org.apache.cxf.spring.boot.autoconfigure.CxfAutoConfiguration$$EnhancerBySpringCGLIB$$eab93894",
   "allDeclaredFields":true,
   "allDeclaredMethods":true,
   "allDeclaredConstructors":true,
@@ -1002,7 +999,7 @@
   "methods":[{"name":"cxfServletRegistration","parameterTypes":[] }]
 },
 {
-  "name":"org.apache.cxf.spring.boot.autoconfigure.CxfAutoConfiguration$$EnhancerBySpringCGLIB$$ff7c806d$$FastClassBySpringCGLIB$$cfff0010",
+  "name":"org.apache.cxf.spring.boot.autoconfigure.CxfAutoConfiguration$$EnhancerBySpringCGLIB$$eab93894$$FastClassBySpringCGLIB$$a6ad0ad1",
   "methods":[{"name":"<init>","parameterTypes":["java.lang.Class"] }]
 },
 {
@@ -1016,7 +1013,7 @@
   "allDeclaredConstructors":true
 },
 {
-  "name":"org.apache.cxf.spring.boot.autoconfigure.CxfAutoConfiguration$SpringBusConfiguration$$EnhancerBySpringCGLIB$$cf0fb87e",
+  "name":"org.apache.cxf.spring.boot.autoconfigure.CxfAutoConfiguration$SpringBusConfiguration$$EnhancerBySpringCGLIB$$ba4c70a5",
   "allDeclaredFields":true,
   "allDeclaredMethods":true,
   "allDeclaredConstructors":true,
@@ -1050,14 +1047,6 @@
   "name":"org.apache.cxf.transport.servlet.CXFServlet"
 },
 {
-  "name":"org.apache.cxf.transports.http.configuration.HTTPClientPolicy",
-  "methods":[{"name":"getOtherAttributes","parameterTypes":[] }]
-},
-{
-  "name":"org.apache.cxf.transports.http.configuration.HTTPServerPolicy",
-  "methods":[{"name":"getOtherAttributes","parameterTypes":[] }]
-},
-{
   "name":"org.apache.cxf.transports.http.configuration.ObjectFactory",
   "allDeclaredMethods":true
 },
@@ -1083,10 +1072,6 @@
 {
   "name":"org.apache.cxf.ws.addressing.wsdl.ObjectFactory",
   "allDeclaredMethods":true
-},
-{
-  "name":"org.apache.cxf.ws.addressing.wsdl.UsingAddressing",
-  "methods":[{"name":"getOtherAttributes","parameterTypes":[] }]
 },
 {
   "name":"org.apache.cxf.ws.policy.AssertionBuilderRegistry"
@@ -1157,15 +1142,10 @@
   "name":"org.apache.cxf.ws.policy.mtom.MTOMPolicyInterceptorProvider"
 },
 {
+  "name":"org.apache.cxf.wsdl.ExtensionClassCreatorProxyService"
+},
+{
   "name":"org.apache.cxf.wsdl.WSDLManager"
-},
-{
-  "name":"org.apache.cxf.wsdl.http.AddressType",
-  "methods":[{"name":"getOtherAttributes","parameterTypes":[] }]
-},
-{
-  "name":"org.apache.cxf.wsdl.http.ObjectFactory",
-  "allDeclaredMethods":true
 },
 {
   "name":"org.apache.cxf.wsdl11.WSDLManagerImpl",
@@ -1246,96 +1226,6 @@
 {
   "name":"org.jcp.xml.dsig.internal.dom.XMLDSigRI",
   "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"org.objectweb.asm.AnnotationWriter",
-  "methods":[{"name":"visitEnd","parameterTypes":[] }]
-},
-{
-  "name":"org.objectweb.asm.ClassWriter",
-  "fields":[
-    {"name":"COMPUTE_FRAMES"}, 
-    {"name":"COMPUTE_MAXS"}
-  ],
-  "methods":[
-    {"name":"<init>","parameterTypes":["int"] }, 
-    {"name":"toByteArray","parameterTypes":[] }, 
-    {"name":"visit","parameterTypes":["int","int","java.lang.String","java.lang.String","java.lang.String","java.lang.String[]"] }, 
-    {"name":"visitEnd","parameterTypes":[] }, 
-    {"name":"visitField","parameterTypes":["int","java.lang.String","java.lang.String","java.lang.String","java.lang.Object"] }, 
-    {"name":"visitMethod","parameterTypes":["int","java.lang.String","java.lang.String","java.lang.String","java.lang.String[]"] }, 
-    {"name":"visitSource","parameterTypes":["java.lang.String","java.lang.String"] }
-  ]
-},
-{
-  "name":"org.objectweb.asm.FieldWriter",
-  "methods":[{"name":"visitEnd","parameterTypes":[] }]
-},
-{
-  "name":"org.objectweb.asm.Label",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"org.objectweb.asm.MethodVisitor",
-  "methods":[{"name":"visitFrame","parameterTypes":["int","int","java.lang.Object[]","int","java.lang.Object[]"] }]
-},
-{
-  "name":"org.objectweb.asm.MethodWriter",
-  "allPublicMethods":true
-},
-{
-  "name":"org.objectweb.asm.Opcodes",
-  "fields":[
-    {"name":"AALOAD"}, 
-    {"name":"ACC_ABSTRACT"}, 
-    {"name":"ACC_FINAL"}, 
-    {"name":"ACC_INTERFACE"}, 
-    {"name":"ACC_PRIVATE"}, 
-    {"name":"ACC_PUBLIC"}, 
-    {"name":"ACC_STATIC"}, 
-    {"name":"ACC_SUPER"}, 
-    {"name":"ACC_SYNTHETIC"}, 
-    {"name":"ACONST_NULL"}, 
-    {"name":"ALOAD"}, 
-    {"name":"ANEWARRAY"}, 
-    {"name":"ARETURN"}, 
-    {"name":"ARRAYLENGTH"}, 
-    {"name":"ASTORE"}, 
-    {"name":"ATHROW"}, 
-    {"name":"CHECKCAST"}, 
-    {"name":"DCONST_0"}, 
-    {"name":"DUP"}, 
-    {"name":"FCONST_0"}, 
-    {"name":"F_APPEND"}, 
-    {"name":"F_SAME"}, 
-    {"name":"F_SAME1"}, 
-    {"name":"GETFIELD"}, 
-    {"name":"GETSTATIC"}, 
-    {"name":"GOTO"}, 
-    {"name":"ICONST_0"}, 
-    {"name":"ICONST_1"}, 
-    {"name":"IFNONNULL"}, 
-    {"name":"IFNULL"}, 
-    {"name":"IF_ICMPLT"}, 
-    {"name":"ILOAD"}, 
-    {"name":"INTEGER"}, 
-    {"name":"INVOKEINTERFACE"}, 
-    {"name":"INVOKESPECIAL"}, 
-    {"name":"INVOKESTATIC"}, 
-    {"name":"INVOKEVIRTUAL"}, 
-    {"name":"IRETURN"}, 
-    {"name":"ISTORE"}, 
-    {"name":"LCONST_0"}, 
-    {"name":"NEW"}, 
-    {"name":"POP"}, 
-    {"name":"PUTFIELD"}, 
-    {"name":"PUTSTATIC"}, 
-    {"name":"RETURN"}, 
-    {"name":"SIPUSH"}, 
-    {"name":"V1_5"}, 
-    {"name":"V1_6"}, 
-    {"name":"V1_7"}
-  ]
 },
 {
   "name":"org.slf4j.LoggerFactory",
@@ -2335,7 +2225,7 @@
   "allPublicMethods":true
 },
 {
-  "name":"org.springframework.boot.validation.beanvalidation.MethodValidationExcludeFilter$$Lambda$296/1353170030",
+  "name":"org.springframework.boot.validation.beanvalidation.MethodValidationExcludeFilter$$Lambda$296/1702660825",
   "allDeclaredFields":true,
   "allDeclaredMethods":true
 },

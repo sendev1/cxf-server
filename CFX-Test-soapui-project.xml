@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e4b006e3-de4b-4445-bf43-68df7ecb33c6" activeEnvironment="Default" name="CFX-Test" resourceRoot="${projectDir}" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b6b24cde-e3e4-40ea-a43f-b1a5e09e3a32" wsaVersion="NONE" name="HelloWorldImplServiceSoapBinding" type="wsdl" bindingName="{http://server.cxf.com/}HelloWorldImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/cxf/ws/helloworld?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/cxf/ws/helloworld?wsdl"><con:part><con:url>http://localhost:8080/cxf/ws/helloworld?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloWorldImplService" targetNamespace="http://server.cxf.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://server.cxf.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://helloworld.tutorialspoint.com/">
+  <wsdl:import location="http://localhost:8080/cxf/ws/helloworld?wsdl=HelloWorldPortType.wsdl" namespace="http://helloworld.tutorialspoint.com/"></wsdl:import>
+  <wsdl:binding name="HelloWorldImplServiceSoapBinding" type="ns1:HelloWorldPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="greetings">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="greetings">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="greetingsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWorldImplService">
+    <wsdl:port binding="tns:HelloWorldImplServiceSoapBinding" name="HelloWorldImplPort">
+      <soap:address location="http://localhost:8080/cxf/ws/helloworld"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/cxf/ws/helloworld?wsdl=HelloWorldPortType.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloWorldPortType" targetNamespace="http://helloworld.tutorialspoint.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://helloworld.tutorialspoint.com/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://helloworld.tutorialspoint.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://helloworld.tutorialspoint.com/">
+      <xs:element name="greetings" type="tns:greetings"/>
+      <xs:element name="greetingsResponse" type="tns:greetingsResponse"/>
+      <xs:complexType name="greetings">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="greetingsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="greetingsResponse">
+    <wsdl:part element="ns1:greetingsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="greetings">
+    <wsdl:part element="ns1:greetings" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloWorldPortType">
+    <wsdl:operation name="greetings">
+      <wsdl:input message="ns1:greetings" name="greetings"></wsdl:input>
+      <wsdl:output message="ns1:greetingsResponse" name="greetingsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/cxf/ws/helloworld</con:endpoint></con:endpoints><con:operation id="6aecaed6-cfdb-44e5-88c9-af4cb8e5f45c" isOneWay="false" action="" name="greetings" bindingOperationName="greetings" type="Request-Response" outputName="greetingsResponse" inputName="greetings" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5aefbe29-c920-402a-bcaa-9c4e62e8ad7e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/cxf/ws/helloworld</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://helloworld.tutorialspoint.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hel:greetings>
+         <!--Optional:-->
+         <hel:arg0>kris 2123</hel:arg0>
+      </hel:greetings>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://server.cxf.com/HelloWorldPortType/greetings"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="387b19b9-3188-4b6c-b372-c25d9892ebd7" name="HelloWorldImplServiceSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b94b8382-bdef-405f-8e82-81e9a62ab19c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="greetings TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="bfcdb183-4cb6-4288-abaa-98496a4a084d" name="greetings"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HelloWorldImplServiceSoapBinding</con:interface><con:operation>greetings</con:operation><con:request name="greetings" id="59de3b33-30f3-491c-bd38-d22e83ee3300"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/cxf/ws/helloworld</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://helloworld.tutorialspoint.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hel:greetings>
+         <!--Optional:-->
+         <hel:arg0>?</hel:arg0>
+      </hel:greetings>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://server.cxf.com/HelloWorldPortType/greetings"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

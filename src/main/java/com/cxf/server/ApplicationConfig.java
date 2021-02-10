@@ -27,23 +27,33 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 @Configuration
 public class ApplicationConfig {
-    @Bean("cxfBus")
-	public Bus bus() {
-		final Bus bus = new ExtensionManagerBus();
-		BusFactory.setDefaultBus(bus);
+    //@Bean("cxfBus")
+    //public Bus bus() {
+    //    final Bus bus = new ExtensionManagerBus();
+    //    BusFactory.setDefaultBus(bus);
 
-		bus.setExtension(new WrapperHelperClassLoader(bus), WrapperHelperCreator.class);
-		bus.setExtension(new ExtensionClassLoader(bus), ExtensionClassCreator.class);
-		bus.setExtension(new ExceptionClassLoader(bus), ExceptionClassCreator.class);
-		bus.setExtension(new WrapperClassLoader(bus), WrapperClassCreator.class);
-		bus.setExtension(new FactoryClassLoader(bus), FactoryClassCreator.class);
-		bus.setExtension(new GeneratedNamespaceClassLoader(bus), NamespaceClassCreator.class);
+        //bus.setExtension(new WrapperHelperClassLoader(bus), WrapperHelperCreator.class);
+        //bus.setExtension(new ExtensionClassLoader(bus), ExtensionClassCreator.class);
+        //bus.setExtension(new ExceptionClassLoader(bus), ExceptionClassCreator.class);
+        //bus.setExtension(new WrapperClassLoader(bus), WrapperClassCreator.class);
+        //bus.setExtension(new FactoryClassLoader(bus), FactoryClassCreator.class);
+        //bus.setExtension(new GeneratedNamespaceClassLoader(bus), NamespaceClassCreator.class);
 
-		return bus;
-	}
+    //    return bus;
+    //}
+
+    @Autowired
+    private Bus bus;
 
     @Bean
-    public Endpoint endpoint(@Qualifier("cxfBus") Bus bus) {
+    public Endpoint endpoint(Bus bus) {
+        bus.setExtension(new WrapperHelperClassLoader(bus), WrapperHelperCreator.class);
+        bus.setExtension(new ExtensionClassLoader(bus), ExtensionClassCreator.class);
+        bus.setExtension(new ExceptionClassLoader(bus), ExceptionClassCreator.class);
+        bus.setExtension(new WrapperClassLoader(bus), WrapperClassCreator.class);
+        bus.setExtension(new FactoryClassLoader(bus), FactoryClassCreator.class);
+        bus.setExtension(new GeneratedNamespaceClassLoader(bus), NamespaceClassCreator.class);
+
         EndpointImpl endpoint =
                 new EndpointImpl(bus, new HelloWorldImpl());
         endpoint.publish("/helloworld");

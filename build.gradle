@@ -1,6 +1,8 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 plugins {
-	id 'org.springframework.boot' version '2.3.4.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id "org.springframework.boot" version "2.4.2"
+	id "io.spring.dependency-management" version "1.0.11.RELEASE"
 	id 'java'
 	id("no.nils.wsdl2java") version "0.12"
 }
@@ -10,16 +12,21 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
+	mavenLocal()
 	mavenCentral()
+	maven { url = uri("https://repo.spring.io/milestone") }
+	maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//implementation("org.springframework.experimental:spring-graalvm-native:0.9.0-SNAPSHOT")
+	implementation "org.springframework.experimental:spring-graalvm-native:0.8.5"
+	implementation "org.springframework.boot:spring-boot-starter-web"
 	implementation "org.apache.cxf:cxf-spring-boot-starter-jaxws:3.4.2"
 	implementation "org.springframework.boot:spring-boot-starter-validation"
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+		exclude group: "org.junit.vintage', module: 'junit-vintage-engine"
 	}
 }
 
@@ -34,5 +41,6 @@ wsdl2java {
 			[file("src/main/resources/wsdl/helloworld.wsdl")]
 	]
 	wsdlDir = file("src/main/resources/wsdl")
-	ext.cxfVersion = "3.3.7"
+	ext.cxfVersion = "3.4.2"
 }
+

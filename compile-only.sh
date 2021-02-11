@@ -32,12 +32,10 @@ native-image \
   --install-exit-handlers \
   --enable-all-security-services \
   -Dspring.xml.ignore=false \
-  --initialize-at-build-time=org.apache.cxf.spring.boot.autoconfigure.micrometer.MicrometerMetricsAutoConfiguration \
   -H:Name=${ARTIFACT} \
   -H:+PrintClassInitialization \
   -Dorg.apache.cxf.JDKBugHacks.all=true \
   --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
-  --trace-class-initialization=javax.el.CompositeELResolver,javax.el.BeanELResolver,javax.el.MapELResolver \
   -H:+ReportExceptionStackTraces \
   -cp ${CP} \
   ${MAINCLASS}

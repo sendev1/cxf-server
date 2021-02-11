@@ -26,19 +26,18 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApplicationConfig {
-	@Autowired
-	private DumpingClassLoaderCapturer capturer;
+
 
 	@Bean(name=Bus.DEFAULT_BUS_ID)
 	public SpringBus springBus() {
 		final Bus bus = new SpringBus();
-		/*bus.setExtension(new WrapperHelperClassLoader(bus), WrapperHelperCreator.class);
+		bus.setExtension(new WrapperHelperClassLoader(bus), WrapperHelperCreator.class);
 		bus.setExtension(new ExtensionClassLoader(bus), ExtensionClassCreator.class);
 		bus.setExtension(new ExceptionClassLoader(bus), ExceptionClassCreator.class);
 		bus.setExtension(new WrapperClassLoader(bus), WrapperClassCreator.class);
 		bus.setExtension(new FactoryClassLoader(bus), FactoryClassCreator.class);
-		bus.setExtension(new GeneratedNamespaceClassLoader(bus), NamespaceClassCreator.class);*/
-		bus.setExtension(capturer, GeneratedClassClassLoaderCapture.class);
+		bus.setExtension(new GeneratedNamespaceClassLoader(bus), NamespaceClassCreator.class);
+		
 		return new SpringBus();
 	}
 

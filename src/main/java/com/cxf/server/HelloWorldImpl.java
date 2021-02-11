@@ -17,17 +17,11 @@ import org.springframework.stereotype.Service;
 	targetNamespace = "http://helloworld.tutorialspoint.com/")
 public class HelloWorldImpl implements HelloWorldPortType {
 
-	@Autowired
-	private DumpingClassLoaderCapturer capturer;
+	
 
     @Override
     public String greetings(String name) {
-		//DumpingClassLoaderCapturer capturer = new DumpingClassLoaderCapturer();
-		try {
-			capturer.dumpTo(new File("dump"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		return ("hi " + name);
     }
 }

@@ -18,8 +18,8 @@ cd build/native-image
 jar -xvf ../libs/$JAR
 cp -R META-INF BOOT-INF/classes
 
-echo "copying dumps"
-cp -RT ~/cxf-server/dump/ BOOT-INF/classes
+#echo "copying dumps"
+#cp -RT ~/cxf-server/dump/ BOOT-INF/classes
 
 LIBPATH=$(find BOOT-INF/lib | tr '\n' ':')
 CP=BOOT-INF/classes:$LIBPATH

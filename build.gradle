@@ -25,6 +25,8 @@ dependencies {
 	implementation "org.apache.cxf:cxf-spring-boot-starter-jaxws:3.4.2"
 	implementation "org.springframework.boot:spring-boot-starter-validation"
 
+	compileOnly "org.graalvm.nativeimage:svm:21.0.0"
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: "org.junit.vintage', module: 'junit-vintage-engine"
 	}

@@ -1,7 +1,9 @@
 {
   "resources":{
   "includes":[
-    {"pattern":"\\Q/classes/wsdl/helloworld.wsdl\\E"},
+    {"pattern":"\\Qlogging.properties\\E"},
+    {"pattern":"\\QBOOT-INF/classes/wsdl/helloworld.wsdl\\E"},
+    {"pattern":"\\QBOOT-INF/classes/wsdl/helloworld.wsdl\\E"},
     {"pattern":"\\Q/org/apache/cxf/version/version.properties\\E"},
     {"pattern":"\\Q/schemas/wsdl/ws-addr-wsdl.xsd\\E"}, 
     {"pattern":"\\Q/schemas/wsdl/ws-addr.xsd\\E"}, 

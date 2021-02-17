@@ -52,7 +52,7 @@
    <soapenv:Body>
       <hel:greetings>
          <!--Optional:-->
-         <hel:arg0>kris 33ddsdsd333</hel:arg0>
+         <hel:arg0>kris 33dsdsdsddsdsd333</hel:arg0>
       </hel:greetings>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://server.cxf.com/HelloWorldPortType/greetings"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="387b19b9-3188-4b6c-b372-c25d9892ebd7" name="HelloWorldImplServiceSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b94b8382-bdef-405f-8e82-81e9a62ab19c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="greetings TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="bfcdb183-4cb6-4288-abaa-98496a4a084d" name="greetings"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HelloWorldImplServiceSoapBinding</con:interface><con:operation>greetings</con:operation><con:request name="greetings" id="59de3b33-30f3-491c-bd38-d22e83ee3300"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/cxf/ws/helloworld</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://helloworld.tutorialspoint.com/">

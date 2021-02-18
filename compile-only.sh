@@ -25,23 +25,19 @@ GRAALVM_VERSION=$(native-image --version)
 echo "Compiling $ARTIFACT with $GRAALVM_VERSION"
 
 native-image \
-  --verbose \
-  --no-fallback \
-  --no-server \
-  --install-exit-handlers \
-  --enable-all-security-services \
-  -Dspring.xml.ignore=false \
-  -H:GenerateDebugInfo=1 \
-  -H:Name=${ARTIFACT} \
-  -H:+PrintClassInitialization \
-  -Dorg.apache.cxf.JDKBugHacks.all=true \
-  -Dspring.native.mode=agent \
-  -H:ConfigurationFileDirectories=./src/main/resources/META-INF/native-image \
-  --initialize-at-build-time=com.sun.xml.bind.v2.runtime.reflect.opt.Injector,com.sun.xml.bind.v2.schemagen.xmlschema \
-  --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
-  -H:+ReportExceptionStackTraces \
-  -cp ${CP} \
-  ${MAINCLASS}
+    --verbose \
+    --allow-incomplete-classpath \
+    --no-fallback \
+    --no-server \
+    --enable-all-security-services \
+    -H:Name=${ARTIFACT} \
+    -H:+ReportExceptionStackTraces \
+    -Dspring.xml.ignore=false \
+    -Dspring.spel.ignore=true \
+    -Dspring.native.remove-yaml-support=true \
+    --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
+    -cp ${CP} \
+    ${MAINCLASS}
 
 #   --allow-incomplete-classpath \
 #  -Dorg.apache.cxf.jmx.disabled=true \

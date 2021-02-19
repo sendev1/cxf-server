@@ -34,11 +34,11 @@ native-image \
     --no-server \
     --enable-all-security-services \
     -H:Name=${ARTIFACT} \
-    -H:TraceClassInitialization=true \
     -H:+ReportExceptionStackTraces \
-    -Dpring.xml.ignore=false \
+    -Dspring.xml.ignore=false \
     -Dspring.spel.ignore=true \
     -Dspring.native.remove-yaml-support=true \
+    --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
     -cp ${CP} \
     ${MAINCLASS}
 

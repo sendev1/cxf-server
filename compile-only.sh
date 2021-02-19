@@ -18,9 +18,6 @@ cd build/native-image
 jar -xvf ../libs/$JAR
 cp -R META-INF BOOT-INF/classes
 
-#echo "copying dumps"
-#cp -RT ~/cxf-server/dump/ BOOT-INF/classes
-
 LIBPATH=$(find BOOT-INF/lib | tr '\n' ':')
 CP=BOOT-INF/classes:$LIBPATH
 
@@ -28,25 +25,29 @@ GRAALVM_VERSION=$(native-image --version)
 echo "Compiling $ARTIFACT with $GRAALVM_VERSION"
 
 native-image \
-  --verbose \
-  --allow-incomplete-classpath \
-  --no-fallback \
-  --no-server \
-  --install-exit-handlers \
-  --enable-all-security-services \
-  -Dspring.xml.ignore=false \
-  -H:Name=${ARTIFACT} \
-  -H:+ReportExceptionStackTraces \
-  --initialize-at-build-time=javax.el.MapELResolver,javax.el.ListELResolver \
-  -cp ${CP} \
-  ${MAINCLASS}
+    --verbose \
+    --allow-incomplete-classpath \
+    --no-fallback \
+    --no-server \
+    --enable-all-security-services \
+    -H:Name=${ARTIFACT} \
+    -H:+ReportExceptionStackTraces \
+    -Dspring.xml.ignore=false \
+    -Dspring.spel.ignore=true \
+    -Dspring.native.remove-yaml-support=true \
+    --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
+    -cp ${CP} \
+    ${MAINCLASS}
 
-#     -Dcxf.metrics.enabled=false \
-#     --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
-#     -H:TraceClassInitialization=true \
-# -Dspring.native.mode=agent
-#    -Dspring.native.remove-xml-support=false \
-#    -Dspring.spel.ignore=false \
-#    -Dspring.native.remove-yaml-support=false \
-
-#     --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
+#   --allow-incomplete-classpath \
+#  -Dorg.apache.cxf.jmx.disabled=true \
+#  -Dcxf.metrics.enabled=false \
+#  -Dmanagement.metrics.binders.jvm.enabled=false \
+#  -Dcxf.metrics.enabled=false \
+#  --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \
+#  -H:TraceClassInitialization=true \
+#  -Dspring.native.mode=agent
+#  -Dspring.native.remove-xml-support=false \
+#  -Dspring.spel.ignore=false \
+#  -Dspring.native.remove-yaml-support=false \
+#  --initialize-at-run-time=org.hibernate.validator.internal.engine.messageinterpolation.el.SimpleELContext \

@@ -1,16 +1,10 @@
 [
 {
   "name":"java.lang.ClassLoader",
-  "methods":[
-    {"name":"getPlatformClassLoader","parameterTypes":[] }, 
-    {"name":"loadClass","parameterTypes":["java.lang.String"] }
-  ]
+  "methods":[{"name":"getPlatformClassLoader","parameterTypes":[] }]
 },
 {
   "name":"java.lang.NoSuchMethodError"
-},
-{
-  "name":"jdk.internal.loader.ClassLoaders$PlatformClassLoader"
 },
 {
   "name":"sun.management.VMManagementImpl",

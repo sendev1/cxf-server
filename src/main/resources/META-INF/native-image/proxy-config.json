@@ -18,6 +18,10 @@
   ["org.apache.cxf.binding.soap.wsdl.extensions.SoapOperation"],
   ["org.apache.cxf.common.jaxb.JAXBBeanInfo"],
   ["org.apache.cxf.common.jaxb.JAXBContextProxy"],
+  ["org.apache.cxf.common.util.ASMHelper$AnnotationVisitor"],
+  ["org.apache.cxf.common.util.ASMHelper$ClassWriter"],
+  ["org.apache.cxf.common.util.ASMHelper$FieldVisitor"],
+  ["org.apache.cxf.common.util.ASMHelper$MethodVisitor"],
   ["org.springframework.boot.context.properties.ConfigurationProperties","org.springframework.core.annotation.SynthesizedAnnotation"],
   ["org.springframework.web.bind.annotation.RequestMapping","org.springframework.core.annotation.SynthesizedAnnotation"]
 ]
